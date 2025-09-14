@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arithmetic Calculator</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gradient-to-br from-blue-500 to-purple-600 min-h-screen flex items-center justify-center p-4">
+    <section class="bg-white/95 backdrop-blur-sm rounded-2xl p-8 shadow-2xl border border-white/20 max-w-md w-full">
+        <!-- Header -->
+        <div class="text-center mb-8">
+            <h2 class="text-3xl font-semibold text-gray-800">Arithmetic Calculator</h2>
+        </div>
+        
+        <!-- Display -->
+        <div class="mb-6">
+            <input id="display" placeholder="0" type="text" readonly 
+                   class="w-full h-20 text-3xl text-right px-6 border-none rounded-xl bg-gray-50 text-gray-800 font-mono font-semibold shadow-inner focus:outline-none focus:ring-4 focus:ring-blue-300 transition-all">
+        </div>
+        
+        <!-- Buttons Grid -->
+        <div id="buttons" class="grid grid-cols-4 gap-4">
+            <!-- Row 1 -->
+            <button class="h-16 w-16 bg-black hover:bg-gray-800 text-[#ED7014] rounded-full font-semibold text-xl transition-all duration-75 hover:scale-105 active:scale-95" id="clear">C</button>
+            <button class="h-16 w-16 bg-black hover:bg-gray-800 text-[#ED7014] rounded-full font-semibold text-xl transition-all duration-75 hover:scale-105 active:scale-95" id="backspace">⌫</button>
+            <button class="h-16 w-16 bg-black hover:bg-gray-800 text-[#ED7014] rounded-full font-semibold text-xl transition-all duration-75 hover:scale-105 active:scale-95">%</button>
+            <button class="h-16 w-16 bg-black hover:bg-gray-800 text-[#ED7014] rounded-full font-semibold text-xl transition-all duration-75 hover:scale-105 active:scale-95">÷</button>
+
+            <!-- Row 2 -->
+            <button class="h-16 w-16 bg-black hover:bg-gray-800 text-white rounded-full font-semibold text-xl transition-all duration-75 hover:scale-105 active:scale-95">7</button>
+            <button class="h-16 w-16 bg-black hover:bg-gray-800 text-white rounded-full font-semibold text-xl transition-all duration-75 hover:scale-105 active:scale-95">8</button>
+            <button class="h-16 w-16 bg-black hover:bg-gray-800 text-white rounded-full font-semibold text-xl transition-all duration-75 hover:scale-105 active:scale-95">9</button>
+            <button class="h-16 w-16 bg-black hover:bg-gray-800 text-[#ED7014] rounded-full font-semibold text-xl transition-all duration-75 hover:scale-105 active:scale-95">×</button>
+
+            <!-- Row 3 -->
+            <button class="h-16 w-16 bg-black hover:bg-gray-800 text-white rounded-full font-semibold text-xl transition-all duration-75 hover:scale-105 active:scale-95">4</button>
+            <button class="h-16 w-16 bg-black hover:bg-gray-800 text-white rounded-full font-semibold text-xl transition-all duration-75 hover:scale-105 active:scale-95">5</button>
+            <button class="h-16 w-16 bg-black hover:bg-gray-800 text-white rounded-full font-semibold text-xl transition-all duration-75 hover:scale-105 active:scale-95">6</button>
+            <button class="h-16 w-16 bg-black hover:bg-gray-800 text-[#ED7014] rounded-full font-semibold text-xl transition-all duration-75 hover:scale-105 active:scale-95">−</button>
+
+            <!-- Row 4 -->
+            <button class="h-16 w-16 bg-black hover:bg-gray-800 text-white rounded-full font-semibold text-xl transition-all duration-75 hover:scale-105 active:scale-95">1</button>
+            <button class="h-16 w-16 bg-black hover:bg-gray-800 text-white rounded-full font-semibold text-xl transition-all duration-75 hover:scale-105 active:scale-95">2</button>
+            <button class="h-16 w-16 bg-black hover:bg-gray-800 text-white rounded-full font-semibold text-xl transition-all duration-75 hover:scale-105 active:scale-95">3</button>
+            <button class="h-16 w-16 bg-black hover:bg-gray-800 text-[#ED7014] rounded-full font-semibold text-xl transition-all duration-75 hover:scale-105 active:scale-95">+</button>
+
+            <!-- Row 5 -->
+            <button class="h-16 w-36 col-span-2 bg-black hover:bg-gray-800 text-white rounded-full font-semibold text-xl transition-all duration-75 hover:scale-105 active:scale-95">0</button>
+            <button class="h-16 w-16 bg-black hover:bg-gray-800 text-white rounded-full font-semibold text-xl transition-all duration-75 hover:scale-105 active:scale-95">.</button>
+            <button class="h-16 w-16 bg-black hover:bg-gray-800 text-[#ED7014] rounded-full font-semibold text-xl transition-all duration-75 hover:scale-105 active:scale-95">=</button>
+        </div>
+    </section>
+    
+    <script src="app.js"></script>
+</body>
+</html>

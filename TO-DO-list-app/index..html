@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TO-DO List Application</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <section class="todo-container">
+        <!--things to do will be written in this input field and added.-->
+        <div class="todo-adds">
+            <input type="text" placeholder="Add a new task" class="input-field" >
+            <button class="add-btn">Add</button>
+        </div>
+        <!-- added tasks will goes here-->
+        <div class="added-section">
+          <table>
+            <thead class="table-header">
+                <tr>
+                    <th>Task</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <div class="warning"></div>
+            <tbody class="table-body">
+                       <!--Elements will be appeded here-->
+            </tbody>
+          </table>
+        </div>
+    </section>
+    <script src="app.js"></script>
+</body>
+</html>
