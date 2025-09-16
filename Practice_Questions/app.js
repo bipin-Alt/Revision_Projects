@@ -19,8 +19,8 @@ squareTwo(numbers);
 // Q.N.2 From an array of names, destructure the first name and use filter to keep only names starting with that letter.
 
 const  names =["Ram", "Hari", "Sita", "Joshef","Alspin","Rajesh"];
-const [a] = names;
-const nameSplit = a.split("");
+const [a,b] = names;
+const nameSplit = b.split("");
 let firstLetter = nameSplit[0];
 const arrayofMatchingFirstLetter=names.filter((name)=>{
     const namesSplit= name.split("");
@@ -29,3 +29,9 @@ const arrayofMatchingFirstLetter=names.filter((name)=>{
     }
 }) 
 console.log(arrayofMatchingFirstLetter);
+
+//Write a function that takes an array of at least three numbers, destructure the first, second, and remaining numbers, then use reduce to calculate the sum of the rest.
+
+const threeArr = ([a,b,c])=>{
+  
+}
