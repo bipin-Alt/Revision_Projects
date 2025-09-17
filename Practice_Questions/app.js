@@ -33,5 +33,9 @@ console.log(arrayofMatchingFirstLetter);
 //Write a function that takes an array of at least three numbers, destructure the first, second, and remaining numbers, then use reduce to calculate the sum of the rest.
 
 const threeArr = ([a,b,c])=>{
+    const sum = [a,b,c].reduce((acc,num)=> acc + num, 0);
+    return sum;
   
 }
+console.log(threeArr([3,4,1,5]));
+
