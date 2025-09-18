@@ -2,17 +2,25 @@ let friends = [];
 
 
 const calculation = () =>{
-    const numberOfFriends = document.getElementById("totalfriends").value;  
-    const totalAmount = friends.reduce((sum, friend)=>{
+    let numberOfFriends = document.getElementById("totalfriends").value; 
+    let displayTotalFriends = document.getElementById("total-people"); 
+    let totalAmount = friends.reduce((sum, friend)=>{
        return sum + Number(friend.Price);
     },0)
     const displayTotal = document.getElementById("total-amount");
     displayTotal.textContent = totalAmount;
-    const displayPerEach = document.getElementById("per-person");
-    const amountPerPerson =  totalAmount / numberOfFriends;
-    displayPerEach.textContent = amountPerPerson;
+    let displayPerEach = document.getElementById("per-person");
+    
+    if(totalAmount === 0){
 
-    const displayTotalFriends = document.getElementById("total-people");
+      displayPerEach.textContent = totalAmount;
+    }else{
+      const amountPerPerson =  totalAmount / numberOfFriends;
+      displayPerEach.textContent = amountPerPerson;
+    }
+    
+
+    
     displayTotalFriends.textContent= numberOfFriends;
 }
 
