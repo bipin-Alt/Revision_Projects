@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Application</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-gradient-to-br from-blue-500 to-blue-700 min-h-screen">
+    <section id="weatherApp" class="container mx-auto px-4 py-8 max-w-4xl">
+        <!-- Header -->
+        <header id="header" class="mb-8">
+            <div class="bg-white bg-opacity-10 backdrop-blur-sm rounded-xl p-6 border border-white border-opacity-20">
+                <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+                    <div id="logo" class="text-center md:text-left">
+                        <h3 class="text-2xl font-bold text-white">
+                            Weather Pro
+                            <span class="block text-blue-100 text-sm font-normal">Navigate weather with ease</span>
+                        </h3>
+                    </div>
+                    <div class="flex flex-col sm:flex-row gap-3">
+                        <div class="relative">
+                            <input 
+                                type="text" 
+                                placeholder="Enter a city" 
+                                id="searchInput"
+                                class="w-full sm:w-64 px-4 py-2 pl-10 rounded-lg bg-white bg-opacity-20 backdrop-blur-sm border border-white border-opacity-30 text-white placeholder-blue-100 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50"
+                            >
+                            <i class="fas fa-search absolute left-3 top-1/2 transform -translate-y-1/2 text-blue-100"></i>
+                        </div>
+                        <button 
+                            id="searchBtn"
+                            class="px-6 py-2 bg-white bg-opacity-20 backdrop-blur-sm border border-white border-opacity-30 rounded-lg text-white hover:bg-opacity-30 transition-all duration-200 font-medium"
+                        >
+                            <i class="fas fa-search mr-2"></i>Search
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main>
+            <div id="weather-data" class="space-y-6">
+                <!-- Current Weather Card -->
+                <div class="bg-white bg-opacity-10 backdrop-blur-sm rounded-xl p-6 border border-white border-opacity-20">
+                    <div class="text-center">
+                        <div id="location" class="text-white text-xl font-semibold mb-2">Loading...</div>
+                        <div id="current-temp" class="text-6xl font-bold text-white mb-2">--°</div>
+                        <div id="weather-description" class="text-blue-100 text-lg capitalize mb-4">--</div>
+                        <div id="weather-icon" class="text-4xl mb-4">
+                            <i class="fas fa-cloud text-yellow-300"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Weather Details Grid -->
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    <div class="bg-white bg-opacity-10 backdrop-blur-sm rounded-lg p-4 border border-white border-opacity-20 text-center">
+                        <div class="text-blue-100 text-sm mb-1">Feels Like</div>
+                        <div id="feels-like" class="text-white text-xl font-semibold">--°</div>
+                    </div>
+                    <div class="bg-white bg-opacity-10 backdrop-blur-sm rounded-lg p-4 border border-white border-opacity-20 text-center">
+                        <div class="text-blue-100 text-sm mb-1">Humidity</div>
+                        <div id="humidity" class="text-white text-xl font-semibold">--%</div>
+                    </div>
+                    <div class="bg-white bg-opacity-10 backdrop-blur-sm rounded-lg p-4 border border-white border-opacity-20 text-center">
+                        <div class="text-blue-100 text-sm mb-1">Wind Speed</div>
+                        <div id="wind-speed" class="text-white text-xl font-semibold">-- km/h</div>
+                    </div>
+                    <div class="bg-white bg-opacity-10 backdrop-blur-sm rounded-lg p-4 border border-white border-opacity-20 text-center">
+                        <div class="text-blue-100 text-sm mb-1">Pressure</div>
+                        <div id="pressure" class="text-white text-xl font-semibold">-- hPa</div>
+                    </div>
+                </div>
+
+                <!-- 5-Day Forecast -->
+                <div class="bg-white bg-opacity-10 backdrop-blur-sm rounded-xl p-6 border border-white border-opacity-20">
+                    <h3 class="text-white text-xl font-semibold mb-4 text-center">5-Day Forecast</h3>
+                    <div id="forecast" class="grid grid-cols-1 sm:grid-cols-5 gap-4">
+                        <!-- Forecast items will be populated by JavaScript -->
+                        <div id="forecast-dispay" class="text-center">
+                            <div class="text-blue-100 text-sm mb-2">Loading...</div>
+                            <div class="text-2xl mb-2">--</div>
+                            <div class="text-white text-lg">--° / --°</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Error Message -->
+                <div id="error-message" class="bg-red-500 bg-opacity-20 backdrop-blur-sm rounded-lg p-4 border border-red-300 border-opacity-30 text-red-100 text-center hidden">
+                    <i class="fas fa-exclamation-triangle mr-2"></i>
+                    <span id="error-text">Error loading weather data</span>
+                </div>
+
+                <!-- Loading Spinner -->
+                <div id="loading" class="text-center hidden">
+                    <div class="inline-block animate-spin rounded-full h-8 w-8 border-b-2 border-white"></div>
+                    <p class="text-white mt-2">Loading weather data...</p>
+                </div>
+            </div>
+        </main>
+    </section>
+
+    <script src="app.js"></script>
+</body>
+</html>
