@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WatchXPro</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-900 text-white min-h-screen flex flex-col">
+  <!-- Header -->
+  <header class="p-4 flex items-center justify-center border-b border-gray-700">
+    <h1 class="text-2xl font-bold text-blue-400"> WatchXPro</h1>
+  </header>
+
+  <!-- Search Section -->
+  <section class="p-4 flex flex-col sm:flex-row items-center justify-center gap-2">
+    <input 
+      id="searchInput"
+      type="text" 
+      placeholder="Search for a movie..."
+      class="w-full sm:w-80 p-2 rounded-md bg-gray-800 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
+    />
+    <button 
+      id="searchBtn"
+      class="px-4 py-2 rounded-md bg-blue-500 hover:bg-blue-600 transition"
+    >
+      Search
+    </button>
+  </section>
+
+  <!-- Loader -->
+  <div id="loader" class="hidden flex justify-center py-6">
+    <div class="w-10 h-10 border-4 border-blue-500 border-t-transparent rounded-full animate-spin"></div>
+  </div>
+
+  <!-- Error Message -->
+  <div id="errorMessage" class="hidden mx-auto my-4 px-4 py-2 bg-red-500 text-white rounded-md text-center w-80">
+    Something went wrong. Please try again.
+  </div>
+
+  <!-- Movie Preview Section -->
+  <main id="moviePreview" class="flex-1 p-4 flex justify-center items-start">
+    <div id="dynamic-movie" class="w-full sm:w-96 bg-gray-800 rounded-lg shadow-lg p-4 hidden">
+      <img id="moviePoster" src="" alt="Movie Poster" class="rounded-md mb-4 w-full h-64 object-cover" />
+      <h2 id="movieTitle" class="text-xl font-bold mb-2">Movie Title</h2>
+      <p id="movieYear" class="text-gray-400 mb-2">Year</p>
+      <p id="moviePlot" class="text-sm text-gray-300">Movie description will appear here...</p>
+    </div>
+  </main>
+
+  
+      <!-- Hardcoded movies preview -->
+<section id="hardcoded-movies" 
+  class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 p-4 sm:p-6">
+
+  <div class="bg-gray-800 rounded-lg shadow-lg p-4 flex flex-col">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTsTKXQqAdm0Y7XgVPT-XXPIsrSHS4FPsfHbQ&s" alt="Movie Poster" 
+         class="rounded-md mb-4 w-full h-64 object-cover" />
+    <h2 class="text-xl font-bold mb-2">Final Destination: Bloodlines</h2>
+    <p class="text-gray-400 mb-2">2025</p>
+    <p class="text-sm text-gray-300">Plagued by a recurring violent nightmare, a college student returns home to find the one person who can break the cycle and save her family from the horrific fate that inevitably awaits them.</p>
+  </div>
+
+  <div class="bg-gray-800 rounded-lg shadow-lg p-4 flex flex-col">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT7ajK1AUWDRlacLDGfJZvh-d0EbLRx9Cw_5g&s" alt="Movie Poster" 
+         class="rounded-md mb-4 w-full h-64 object-cover" />
+    <h2 class="text-xl font-bold mb-2">Mission Impossible-The final reckoning</h2>
+    <p class="text-gray-400 mb-2">2025</p>
+    <p class="text-sm text-gray-300">Hunt and the IMF pursue a dangerous AI called the Entity that's infiltrated global intelligence. With governments and a figure from his past in pursuit.</p>
+  </div>
+
+  <div class="bg-gray-800 rounded-lg shadow-lg p-4 flex flex-col">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQuWPnC36m-5cBIrFbutD9tQcXq2ZwHCWcTlw&s" alt="Movie Poster" 
+         class="rounded-md mb-4 w-full h-64 object-cover" />
+    <h2 class="text-xl font-bold mb-2">Venom: The Last Dance</h2>
+    <p class="text-gray-400 mb-2">2024</p>
+    <p class="text-sm text-gray-300">Eddie Brock and Venom must make a devastating decision as they're pursued by a mysterious military man and alien monsters from Venom's home world.</p>
+  </div>
+</section>
+
+  <!-- Footer -->
+  <footer class="p-4 text-center text-gray-400 border-t border-gray-700 text-sm">
+    © 2025 WatchXPro — Discover your next favorite movie 
+  </footer>
+  <script src="app.js"></script>
+</body>
+</html>
