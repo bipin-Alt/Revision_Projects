@@ -1,11 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NotesWebApp</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NotesWebApp</title>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
+<body class="bg-gray-100 min-h-screen flex items-center justify-center p-4">
+  <!--Web application to take notes-->
+  <section id="noteWebApp" class="bg-white shadow-xl rounded-2xl w-full max-w-3xl p-6">
     
+    <!--Header and logo-->
+    <header id="header" class="text-center mb-6">
+      <h1 class="text-3xl font-bold text-indigo-600">Notex</h1>
+      <span class="text-gray-500 text-sm">- take notes efficiently.</span>
+    </header>
+
+    <!--Input block-->
+    <div id="noteFieldContainer" class="flex flex-col sm:flex-row gap-3 mb-6">
+      <input 
+        type="text" 
+        id="noteInput"
+        placeholder="Enter your note here" 
+        class="flex-1 border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-400"
+      >
+      <button 
+        id="savebtn" 
+        class="bg-indigo-500 text-white px-5 py-2 rounded-lg hover:bg-indigo-600 transition"
+      >
+        Save
+      </button>
+      <button 
+        id="clearall" 
+        class="bg-red-500 text-white px-5 py-2 rounded-lg hover:bg-red-600 transition"
+      >
+        Delete All
+      </button>
+    </div>
+    
+    <!--Display notes-->
+    <div id="display" class="overflow-x-auto">
+      <table class="w-full border-collapse">
+        <thead>
+          <tr class="bg-indigo-100">
+            <th class="p-3 text-left text-gray-700 font-semibold">Notes</th>
+            <th class="p-3 text-left text-gray-700 font-semibold">Action</th>
+          </tr>
+        </thead>
+        <tbody id="notes" class="divide-y divide-gray-200">
+          <!-- Notes will be dynamically added here -->
+        </tbody>
+      </table>
+    </div>
+
+    <!--Error message block-->
+    <div 
+      id="error" 
+      class="mt-4 px-4 py-2 rounded-lg bg-red-100 border border-red-400 text-red-700 text-center font-medium opacity-0 transition-opacity duration-500 ease-in-out"
+    >
+      <p>Add a valid Note!</p>
+    </div>
+    
+  </section>
+  <script src="app.js"></script>
 </body>
 </html>
+
